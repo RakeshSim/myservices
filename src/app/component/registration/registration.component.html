@@ -1,0 +1,97 @@
+       <!-- <div class="form-group">
+            <label >Service : &nbsp;&nbsp;&nbsp;</label>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input id="room" class="custom-control-input"
+                        type="radio" 
+                        value="room" 
+                        name="service" 
+                        formControlName="service" 
+                        (change)="changeGender($event)">
+              <label for="room" class="custom-control-label">Room Shifting/House hold support</label>
+           </div>
+   
+           <div class="custom-control custom-radio custom-control-inline">
+              <input id="clean" class="custom-control-input"
+                        type="radio" 
+                        value="clean" 
+                        name="service" 
+                        formControlName="service" 
+                        (change)="changeGender($event)">
+              <label for="clean" class="custom-control-label">Cleaning Service</label>
+           </div>
+           <div class="custom-control custom-radio custom-control-inline">
+            <input id="baby" class="custom-control-input"
+                      type="radio" 
+                      value="baby" 
+                      name="service" 
+                      formControlName="service" 
+                      (change)="changeGender($event)">
+             <label for="baby" class="custom-control-label">Babysitting Service</label>
+            </div>
+         
+
+            <div class="custom-control custom-radio custom-control-inline">
+            <input id="home" class="custom-control-input"
+                      type="radio" 
+                      value="home" 
+                      name="service" 
+                      formControlName="service" 
+                      (change)="changeGender($event)">
+              <label for="home" class="custom-control-label">Home delivery Service</label>
+            </div>
+        
+       </div>
+       <p><span>You selected Radio: </span><b>{{selectedRadioValue}}</b></p> -->
+                <div>
+                <!-- Use the custom-select class -->
+                <label  >City</label> &nbsp;
+                    <select class="custom-select" 
+                    style="width:150px;" > 
+                    <option value="col">Colorado Spring</option> 
+                    <option value="nj">New Jersy</option> 
+                    <option value="MD">Maryland</option> 
+                    <option value="DC">Washington DC</option> 
+                    <option value="MKE">Milwaukee</option>
+                </select> &nbsp;&nbsp;&nbsp;
+               
+              
+                <label >State</label> &nbsp;
+                    <select class="custom-select" 
+                    style="width:150px;" (change)="selectChangeHandler($event)"> 
+                    <option value="COL">Colorado</option> 
+                    <option value="NJ">New Jersy</option> 
+                    <option value="MD">Maryland</option> 
+                    <option value="DC">DC</option> 
+                    <option value="WS">Wisconsin</option>
+                </select> 
+            </div>
+         
+            <p><span>You selected: </span><b>{{selectedValue}}</b></p>
+            <div> <b>Contact Details</b> </div>
+        
+            
+           
+            <table class="table">
+                <thead>
+                 <div><tr>
+                    <th scope="col">#SR.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Charge/hrs.</th>
+                  </tr></div> 
+                </thead>
+                <tbody>
+                  <div *ngFor="let user of providedService">
+                  <tr>
+                    <th scope="row">{{i}}</th>
+                    <td>{{user.name | uppercase}}</td>
+                    <td>{{user.address}}</td>
+                    <td>{{user.experience | number}}</td>                  
+                    <td>{{user.chargesPerHrs}}</td>
+                  </tr>
+                </div>
+                </tbody>
+              </table>
+      
+    

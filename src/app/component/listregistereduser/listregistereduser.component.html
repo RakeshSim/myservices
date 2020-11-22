@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Services List</h2>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>service</th>
+            <th>experience</th>
+            <th>charges</th>
+            <th>City</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let register of resistration ">
+            <td>{{register.username}}</td>
+            <td>{{register.doservice}}</td>
+            <td>{{register.experience}}</td>
+            <td>{{register.chargesPerHrs}}</td>
+            <td>{{register.cities}}</td>
+
+            <td><button (click)="updateService(register.username)" class="btn btn-danger">Update</button>
+                <button (click)="deleteServices(register.username)" class="btn btn-info" style="margin-left: 10px">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

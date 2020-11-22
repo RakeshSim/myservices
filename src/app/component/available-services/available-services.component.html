@@ -1,0 +1,82 @@
+<h3>Create Registration</h3>
+
+<div [hidden]="!submitted">
+    <h3>You submitted successfully!</h3>
+</div>
+<div  style="width: 400px;" >
+   
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input id="username" name="username" [(ngModel)]="username" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="experience">Experience</label>
+            <input id="experience" name="experience" [(ngModel)]="experience" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="chargesPerHrs">ChargesPerHrs</label>
+            <input id="chargesPerHrs" name="chargesPerHrs" [(ngModel)]="chargesPerHrs" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address </label>
+            <textarea id="address" name="address" [(ngModel)]="address" cols="3" rows="2"
+                class="form-control"></textarea>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input id="isSubscribedWeek" [(ngModel)]="isSubscribedWeek" type="checkbox"> available in week
+            </label>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input id="isSubscribedWeekend" [(ngModel)]="isSubscribedWeekend" type="checkbox"> available in weekend
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="doservice">Service You can do &nbsp;&nbsp;&nbsp;</label>
+            <select id="doservice" [(ngModel)]="doservice" name="doservice" class="form-control">
+                <option value="">select </option>
+                <option *ngFor="let service of services" [value]="service.id">{{service.name}} </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="City">City &nbsp;&nbsp;&nbsp;</label>
+            <select ngModle id="cities" [(ngModel)]="cities" name="cities" class="form-control">
+                <option value="">select </option>
+                <option value="COS">Colorado Spring </option>
+                <option value="MKE">Milwaukee </option>
+                <option value="DEN">Denver </option>
+                <option value="DC">Wishington DC metro Area </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="State">State &nbsp;&nbsp;&nbsp;</label>
+            <select id="states" [(ngModel)]="states" name="states" class="form-control">
+                <option value="">select </option>
+                <option value="CO">Colorado</option>
+                <option value="WI">Wisconsin</option>
+                <option value="DC">Wishington DC</option>
+            </select>
+        </div>
+
+            <div class="radiob">
+                <label>Male&nbsp;&nbsp;&nbsp; </label>
+                <input name="gender" [(ngModel)]="gender"  type="radio" value="M">
+
+            </div>
+            <div class="radiob">
+                <label> Female&nbsp;&nbsp;&nbsp;</label>
+                <input name="gender" [(ngModel)]="gender"  type="radio" value="F">
+
+            </div>
+
+        
+           <button class="btn btn-primary" (click)="saveService()">Submit</button> 
+            <!-- <button type="submit" class="btn btn-success">Submit</button>  -->
+        
+  
+</div>
+
