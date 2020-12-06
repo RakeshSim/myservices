@@ -40,28 +40,27 @@ import { AvailableServicesUpdateComponent } from './component/available-services
 
     HttpClientModule,
     RouterModule.forRoot([
-      {
+    {
         path: 'home-cmp',
         component: HomeComponentComponent
-
-      },
-      {
+    },
+    {
         path: 'registry-cmp',
         component: RegistrationComponent
-      },
-      {
+    },
+    {
         path: 'app-available-services',
         component: AvailableServicesComponent
-      },
-      {
+    },
+    {
         path: 'list-register-services-cmp',
         component: ListregistereduserComponent
-      },
-      {
+    },
+    {
         path: 'update-register-services-cmp/:name ',
         component: AvailableServicesUpdateComponent
-      }
-    ])
+    }
+], { relativeLinkResolution: 'legacy' })
 
   ],
   providers: [],
